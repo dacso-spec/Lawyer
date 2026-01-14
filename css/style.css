@@ -375,7 +375,7 @@ header nav a[href$="contact.html"]:focus-visible {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-image: url("../images/hero_page.png");
+    background-image: none;
     position: relative;
     color: #f9f6f1;
     isolation: isolate;
@@ -386,8 +386,92 @@ header nav a[href$="contact.html"]:focus-visible {
     background-image: none;
 }
 
-.hero.hero-contact {
-    background-image: url("../images/hero_contact.png");
+.hero-about {
+    background-image: url("../images/hero-about.jpg");
+}
+
+.hero-services {
+    background-image: url("../images/hero-services.jpg");
+}
+
+.hero-blog {
+    background-image: url("../images/hero-blog.jpg");
+}
+
+.hero-contact {
+    background-image: url("../images/hero-contact.jpg");
+}
+
+.hero-aile-hukuku {
+    background-image: url("../images/hero-aile-hukuku.jpg");
+}
+
+.hero-ceza-hukuku {
+    background-image: url("../images/hero-ceza-hukuku.jpg");
+}
+
+.hero-fikri-ve-sinai-haklar {
+    background-image: url("../images/hero-fikri-ve-sinai-haklar.jpg");
+}
+
+.hero-icra-ve-iflas-hukuku {
+    background-image: url("../images/hero-icra-ve-iflas-hukuku.jpg");
+}
+
+.hero-idare-hukuku {
+    background-image: url("../images/hero-idare-hukuku.jpg");
+}
+
+.hero-is-ve-sgk-hukuku {
+    background-image: url("../images/hero-is-ve-sgk-hukuku.jpg");
+}
+
+.hero-kamulastirma-hukuku {
+    background-image: url("../images/hero-kamulastirma-hukuku.jpg");
+}
+
+.hero-gayrimenkul-hukuku {
+    background-image: url("../images/hero-gayrimenkul-hukuku.jpg");
+}
+
+.hero-miras-hukuku {
+    background-image: url("../images/hero-miras-hukuku.jpg");
+}
+
+.hero-sigorta-hukuku {
+    background-image: url("../images/hero-sigorta-hukuku.jpg");
+}
+
+.hero-vergi-hukuku {
+    background-image: url("../images/hero-vergi-hukuku.jpg");
+}
+
+.hero-tazminat-hukuku {
+    background-image: url("../images/hero-tazminat-hukuku.jpg");
+}
+
+.hero-ticaret-sirketler-hukuku {
+    background-image: url("../images/hero-ticaret-sirketler-hukuku.jpg");
+}
+
+.hero-yabancilar-ve-vatandaslik-hukuku {
+    background-image: url("../images/hero-yabancilar-ve-vatandaslik-hukuku.jpg");
+}
+
+.hero-kira-bedelinin-tespiti-davasi {
+    background-image: url("../images/hero-kira-bedelinin-tespiti-davasi.jpg");
+}
+
+.hero-anlasmali-bosanmada-dava {
+    background-image: url("../images/hero-anlasmali-bosanmada-dava.jpg");
+}
+
+.hero-nafaka-artirimi-davasi {
+    background-image: url("../images/hero-nafaka-artirimi-davasi.jpg");
+}
+
+.hero-arac-deger-kaybi {
+    background-image: url("../images/hero-arac-deger-kaybi.jpg");
 }
 
 .hero::before {
@@ -1411,7 +1495,12 @@ section h2::after {
     }
 
     .hero:not(.hero-home) {
-        min-height: 52vh;
+        min-height: 44vh;
+        padding: 3.5rem 0 2.5rem;
+    }
+
+    .hero:not(.hero-home) .hero-content {
+        padding: 1.2rem;
     }
 
     .hero .hero-content {
