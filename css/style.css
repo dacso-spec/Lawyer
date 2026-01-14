@@ -1434,6 +1434,33 @@ section h2::after {
         padding: 1.8rem;
     }
 
+    .site-footer .footer-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .site-footer .footer-contact {
+        flex: 1 1 100%;
+    }
+
+    .site-footer .footer-item {
+        flex: 1 1 auto;
+        text-align: left;
+    }
+
+    .site-footer .footer-item ul {
+        text-align: left;
+    }
+
+    .site-footer .footer-social {
+        margin-left: auto;
+        align-self: flex-start;
+    }
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
