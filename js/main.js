@@ -19,8 +19,10 @@
 
         setupNav();
         setupImages();
+        setupHeroSlider();
         setupReveal();
         setupTransitions();
+        setupScrollTop();
     };
 
     const setupNav = () => {
@@ -302,6 +304,89 @@
             });
         });
     };
+
+    const setupHeroSlider = () => {
+        const heroes = Array.from(document.querySelectorAll(".hero"));
+        if (!heroes.length) {
+            return;
+        }
+
+        const isNested = /\/(blog|services)\//.test(window.location.pathname);
+        const basePath = isNested ? "../images/" : "images/";
+        const heroImages = [
+            "tingey-injury-law-firm-nSpj-Z12lX0-unsplash.jpg",
+            "patrick-fore-H5Lf0nGyetk-unsplash.jpg",
+            "inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
+            "giammarco-boscaro-zeH-ljawHtg-unsplash.jpg",
+        ].map((file) => `${basePath}${file}`);
+
+        heroes.forEach((hero) => {
+            hero.style.backgroundImage = "none";
+
+            const slider = document.createElement("div");
+            slider.className = "hero-slider";
+
+            const slideA = document.createElement("div");
+            slideA.className = "hero-slide is-active";
+            slideA.style.backgroundImage = `url("${heroImages[0]}")`;
+            slider.appendChild(slideA);
+
+            if (prefersReducedMotion || heroImages.length < 2) {
+                hero.prepend(slider);
+                return;
+            }
+
+            const slideB = document.createElement("div");
+            slideB.className = "hero-slide";
+            slideB.style.backgroundImage = `url("${heroImages[1]}")`;
+            slider.appendChild(slideB);
+            hero.prepend(slider);
+
+            let index = 0;
+            let active = slideA;
+            let next = slideB;
+
+            window.setInterval(() => {
+                const nextIndex = (index + 1) % heroImages.length;
+                next.style.backgroundImage = `url("${heroImages[nextIndex]}")`;
+                next.classList.add("is-active");
+                active.classList.remove("is-active");
+                active = next;
+                next = next === slideA ? slideB : slideA;
+                index = nextIndex;
+            }, 8000);
+        });
+    };
+
+    const setupScrollTop = () => {
+        const scrollTopButton = document.querySelector(".scroll-top");
+        if (!scrollTopButton) {
+            return;
+        }
+
+        const toggleVisibility = () => {
+            scrollTopButton.classList.toggle("is-visible", window.scrollY > 320);
+        };
+
+        toggleVisibility();
+        window.addEventListener("scroll", toggleVisibility, { passive: true });
+
+        scrollTopButton.addEventListener("click", () => {
+            if (prefersReducedMotion) {
+                window.scrollTo(0, 0);
+                return;
+            }
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    };
+
+    // Handle pageshow event (when navigating back/forward)
+    window.addEventListener("pageshow", (event) => {
+        // If page is loaded from cache (bfcache), remove the is-exiting class
+        if (event.persisted) {
+            document.body.classList.remove("is-exiting");
+        }
+    });
 
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", onReady);
