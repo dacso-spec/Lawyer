@@ -375,10 +375,19 @@ header nav a[href$="contact.html"]:focus-visible {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-image: url("../images/hero_page.png");
     position: relative;
     color: #f9f6f1;
     isolation: isolate;
     overflow: hidden;
+}
+
+.hero.hero-home {
+    background-image: none;
+}
+
+.hero.hero-contact {
+    background-image: url("../images/hero_contact.png");
 }
 
 .hero::before {
@@ -1399,6 +1408,10 @@ section h2::after {
 
     .hero {
         min-height: 65vh;
+    }
+
+    .hero:not(.hero-home) {
+        min-height: 52vh;
     }
 
     .hero .hero-content {

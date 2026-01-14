@@ -306,7 +306,7 @@
     };
 
     const setupHeroSlider = () => {
-        const heroes = Array.from(document.querySelectorAll(".hero"));
+        const heroes = Array.from(document.querySelectorAll(".hero.hero-home"));
         if (!heroes.length) {
             return;
         }
