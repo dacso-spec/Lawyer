@@ -1370,6 +1370,17 @@ section h2::after {
     }
 }
 
+@media (prefers-reduced-motion: reduce) and (max-width: 900px) {
+    .hero.hero-home .hero-slide {
+        transition: opacity 1.2s ease, transform 9s ease, filter 1.2s ease;
+        transform: scale(1.02);
+    }
+
+    .hero.hero-home .hero-slide.is-active {
+        transform: scale(1.08);
+    }
+}
+
 @media (max-width: 1024px) {
     nav > ul {
         gap: 1.2rem;
@@ -1476,6 +1487,10 @@ section h2::after {
         justify-content: center;
     }
 
+    .hero {
+        background-attachment: scroll;
+    }
+
     body.nav-open {
         overflow: hidden;
     }
@@ -1498,6 +1513,8 @@ section h2::after {
     .hero:not(.hero-home) {
         min-height: 30vh;
         padding: 2.1rem 0 1.4rem;
+        background-size: 100% auto;
+        background-position: center top;
     }
 
     .hero:not(.hero-home) .hero-content {

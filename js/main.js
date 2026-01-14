@@ -331,7 +331,7 @@
             slideA.style.backgroundImage = `url("${heroImages[0]}")`;
             slider.appendChild(slideA);
 
-            if (prefersReducedMotion || heroImages.length < 2) {
+            if (heroImages.length < 2) {
                 hero.prepend(slider);
                 return;
             }
