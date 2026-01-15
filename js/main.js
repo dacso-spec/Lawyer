@@ -346,21 +346,27 @@
             slider.className = "hero-slider";
 
             const slideA = document.createElement("div");
-            slideA.className = "hero-slide is-active";
+            slideA.className = "hero-slide";
             slideA.style.backgroundImage = `url("${heroImages[0]}")`;
             slider.appendChild(slideA);
 
-            if (heroImages.length < 2) {
-                hero.prepend(slider);
+            let slideB = null;
+            if (heroImages.length >= 2) {
+                slideB = document.createElement("div");
+                slideB.className = "hero-slide";
+                // Reuse the first image to avoid loading the second hero image immediately.
+                slideB.style.backgroundImage = `url("${heroImages[0]}")`;
+                slider.appendChild(slideB);
+            }
+            hero.prepend(slider);
+
+            requestAnimationFrame(() => {
+                slideA.classList.add("is-active");
+            });
+
+            if (!slideB) {
                 return;
             }
-
-            const slideB = document.createElement("div");
-            slideB.className = "hero-slide";
-            // Reuse the first image to avoid loading the second hero image immediately.
-            slideB.style.backgroundImage = `url("${heroImages[0]}")`;
-            slider.appendChild(slideB);
-            hero.prepend(slider);
 
             let index = 0;
             let active = slideA;
