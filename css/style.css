@@ -1121,6 +1121,20 @@ section h2::after {
     box-shadow: 0 16px 36px rgba(210, 164, 74, 0.45);
 }
 
+.contact-map {
+    margin-top: 2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(210, 164, 74, 0.2);
+    box-shadow: var(--shadow-soft);
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+}
+
 .contact-info {
     background: linear-gradient(140deg, rgba(17, 16, 12, 0.98) 0%, rgba(23, 20, 13, 0.96) 100%);
     padding: 2rem;
@@ -1370,14 +1384,14 @@ section h2::after {
     }
 }
 
-@media (prefers-reduced-motion: reduce) and (max-width: 900px) {
+@media (prefers-reduced-motion: no-preference) and (max-width: 900px) {
     .hero.hero-home .hero-slide {
-        transition: opacity 1.2s ease, transform 9s ease, filter 1.2s ease;
-        transform: scale(1.02);
+        transition: opacity 1.1s ease, transform 7s ease, filter 1.1s ease;
+        transform: scale(1.04);
     }
 
     .hero.hero-home .hero-slide.is-active {
-        transform: scale(1.08);
+        transform: scale(1.12);
     }
 }
 
@@ -1526,6 +1540,10 @@ section h2::after {
         padding: 1.5rem;
     }
 
+    .hero.hero-home .hero-content {
+        backdrop-filter: blur(6px);
+    }
+
     section h2::after {
         width: 60px;
     }
@@ -1539,6 +1557,10 @@ section h2::after {
         margin-top: -1.4rem;
         margin-bottom: 2.5rem;
         padding: 1.8rem;
+    }
+
+    .contact-map iframe {
+        height: 320px;
     }
 
     .site-footer .footer-content {

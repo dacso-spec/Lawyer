@@ -22,6 +22,7 @@
         setupHeroSlider();
         setupReveal();
         setupTransitions();
+        setupFormRedirects();
         setupScrollTop();
     };
 
@@ -305,6 +306,24 @@
         });
     };
 
+    const setupFormRedirects = () => {
+        const forms = Array.from(document.querySelectorAll("form.contact-form"));
+        if (!forms.length) {
+            return;
+        }
+
+        forms.forEach((form) => {
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                const target =
+                    form.getAttribute("data-success") ||
+                    form.getAttribute("action") ||
+                    "thank-you.html";
+                window.location.href = target;
+            });
+        });
+    };
+
     const setupHeroSlider = () => {
         const heroes = Array.from(document.querySelectorAll(".hero.hero-home"));
         if (!heroes.length) {
@@ -338,7 +357,8 @@
 
             const slideB = document.createElement("div");
             slideB.className = "hero-slide";
-            slideB.style.backgroundImage = `url("${heroImages[1]}")`;
+            // Reuse the first image to avoid loading the second hero image immediately.
+            slideB.style.backgroundImage = `url("${heroImages[0]}")`;
             slider.appendChild(slideB);
             hero.prepend(slider);
 
