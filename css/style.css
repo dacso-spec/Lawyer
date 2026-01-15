@@ -387,7 +387,7 @@ header nav a[href$="contact.html"]:focus-visible {
 }
 
 .hero-about {
-    background-image: url("../images/hero-about.jpg");
+    background-image: url("../images/hero-icra-ve-iflas-hukuku.jpg");
 }
 
 .hero-services {
@@ -423,7 +423,7 @@ header nav a[href$="contact.html"]:focus-visible {
 }
 
 .hero-is-ve-sgk-hukuku {
-    background-image: url("../images/hero-is-ve-sgk-hukuku.jpg");
+    background-image: url("../images/hero-services.jpg");
 }
 
 .hero-kamulastirma-hukuku {
@@ -459,19 +459,19 @@ header nav a[href$="contact.html"]:focus-visible {
 }
 
 .hero-kira-bedelinin-tespiti-davasi {
-    background-image: url("../images/hero-kira-bedelinin-tespiti-davasi.jpg");
+    background-image: url("https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
 }
 
 .hero-anlasmali-bosanmada-dava {
-    background-image: url("../images/hero-anlasmali-bosanmada-dava.jpg");
+    background-image: url("https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
 }
 
 .hero-nafaka-artirimi-davasi {
-    background-image: url("../images/hero-nafaka-artirimi-davasi.jpg");
+    background-image: url("../images/istockphoto.jpeg");
 }
 
 .hero-arac-deger-kaybi {
-    background-image: url("../images/hero-arac-deger-kaybi.jpg");
+    background-image: url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
 }
 
 .hero::before {
